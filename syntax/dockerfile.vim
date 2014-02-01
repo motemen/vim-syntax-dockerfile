@@ -21,7 +21,7 @@ syntax keyword dockerfileInstruction EXPOSE contained nextgroup=dockerfilePorts 
 syntax region  dockerfileRunCommand  start=// skip=/\\\n/ end=/$/ contained contains=@sh extend
 syntax match   dockerfilePorts       /\(\s\|\d\)\+/ contains=dockerfileNumber
 
-syntax match   dockerfileComment     /#.*/
+syntax match   dockerfileComment     /^\s*#.*$/
 syntax match   dockerfileNumber      /\d\+/ contained
 
 " acutually a JSON string in an array
