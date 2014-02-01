@@ -9,6 +9,7 @@ endif
 syntax case ignore
 
 setlocal iskeyword+=-
+setlocal iskeyword+=/
 
 syntax include @sh syntax/sh.vim
 
