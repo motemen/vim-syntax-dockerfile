@@ -18,7 +18,7 @@ syntax keyword dockerfileInstruction FROM MAINTAINER CMD ENV ADD ENTRYPOINT VOLU
 syntax keyword dockerfileInstruction RUN contained nextgroup=dockerfileRunCommand skipwhite
 syntax keyword dockerfileInstruction EXPOSE contained nextgroup=dockerfilePorts skipwhite
 
-syntax match   dockerfileRunCommand  /.*/ contained contains=@sh
+syntax region  dockerfileRunCommand  start=// skip=/\\\n/ end=/$/ contained contains=@sh extend
 syntax match   dockerfilePorts       /\(\s\|\d\)\+/ contains=dockerfileNumber
 
 syntax match   dockerfileComment     /#.*/
