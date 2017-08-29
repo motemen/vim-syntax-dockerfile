@@ -1,6 +1,6 @@
 " Vim syntax file for Dockerfile
-" Maintainer:	motemen <http://motemen.github.io/>
-" Last Change:	Mon Jan 27 23:56:25 JST 2014
+" Maintainer:	motemen <https://motemen.github.io/>
+" Last Change:	Tue Aug 29 09:46:47 JST 2017
 
 if exists('b:current_syntax')
     finish
@@ -14,7 +14,7 @@ setlocal iskeyword+=/
 syntax include @sh syntax/sh.vim
 
 syntax match   dockerfileLineStart   /^\s*/ nextgroup=dockerfileInstruction
-syntax keyword dockerfileInstruction FROM MAINTAINER CMD ENV ADD ENTRYPOINT VOLUME USER WORKDIR contained
+syntax keyword dockerfileInstruction FROM MAINTAINER CMD ENV ADD COPY ENTRYPOINT VOLUME USER WORKDIR contained
 syntax keyword dockerfileInstruction RUN contained nextgroup=dockerfileRunCommand skipwhite
 syntax keyword dockerfileInstruction EXPOSE contained nextgroup=dockerfilePorts skipwhite
 
